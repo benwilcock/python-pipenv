@@ -1,13 +1,22 @@
 # Python sample app using pipenv package manager
 
-## Building
+## Running Locally
 
-`pack build pipenv-sample --buildpack paketo-buildpacks/python`
-
-## Running
-
-`docker run --interactive --tty --env PORT=8080 --publish 8080:8080 pipenv-sample`
+`pipenv run gunicorn --bind=127.0.0.1:8010 app:app`
 
 ## Viewing
 
-`curl http://localhost:8080`
+`curl http://localhost:8010`
+
+## Running on TAP
+
+```bash
+tanzu apps workload create python-sample \
+  --git-repo https://github.com/benwilcock/python-pipenv \
+  --git-branch main \
+  --type web \
+  --label app.kubernetes.io/part-of=python-sample \
+  --namespace default \
+  --tail \
+  --yes 
+```
