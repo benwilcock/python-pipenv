@@ -16,6 +16,7 @@ tanzu apps workload create python-sample \
   --git-branch main \
   --type web \
   --label app.kubernetes.io/part-of=python-sample \
+  --annotation autoscaling.knative.dev/minScale=1 \
   --namespace default \
   --tail \
   --yes 
