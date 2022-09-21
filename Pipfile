@@ -1,0 +1,13 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+
+[packages]
+Flask = "==2.0.2"
+gunicorn = "*"
+
+[dev-packages]
+tox = "*"
+coverage = "*"
+"flake8" = "*"
+flask-testing = "*"
