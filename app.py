@@ -1,13 +1,24 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 import subprocess
 import gunicorn
 
+app_name = "Python App With Flask, HTML, And REST"
+app = Flask(app_name)
 
-app = Flask(__name__)
+messages = [
+    {
+        'msg_subject':'Secure Software Supply Chains Are Great!', 
+        'msg_body':'With A Secure Software Supply Chain, Deploying Python Code To PROD is Safe, Reliable, And Fast!'
+    }
+]
 
 @app.route("/")
 def hello():
     return render_template('index.html')
+
+@app.route('/messages')
+def get_incomes():
+    return jsonify(messages)
 
 @app.route('/execute', methods=['POST'])
 def execute():
@@ -17,7 +28,7 @@ def execute():
 
 @app.route('/versions')
 def versions():
-    version = gunicorn.__version__
-    return "Gunicorn version: " + version
+    gu_version = gunicorn.__version__
+    return "Gunicorn version: " + gu_version
 
-app.debug=True
+app.debug=False
