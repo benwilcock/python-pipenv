@@ -29,3 +29,18 @@ tanzu apps workload create python-sample \
 1. `/`  HTML home page (shows a single page app containing a static image and some text). Contains a link to the source code.
 1. `/messages` REST [GET] (shows a single hardcoded message as part of a list of messages).
 1. `/versions` Plaintext (shows the version of Gunicorn used in this app).
+
+## Customisations
+
+For a simple customisation, in the application code (in the `app.py` `hello()` method) change the name of the `client` variable from "VMware" to someone else and then redeploy/restart.
+
+```python
+@app.route("/")
+def hello():
+    client = "VMware"
+    return render_template('index.html', client=client)
+```
+
+The homepage will then use the new name of the client in the text at the bottom of the page.
+
+
