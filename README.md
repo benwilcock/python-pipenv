@@ -26,6 +26,6 @@ tanzu apps workload create python-sample \
 
 ## Application Endpoints
 
-1. `/`  HTML home page (shows a single page app containing a static image and some text)
+1. `/`  HTML home page (shows a single page app containing a static image and some text). Contains a link to the source code.
 1. `/messages` REST [GET] (shows a single hardcoded message as part of a list of messages).
 1. `/versions` Plaintext (shows the version of Gunicorn used in this app).
