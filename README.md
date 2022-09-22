@@ -4,11 +4,11 @@ A basic sample which began life as part of the [Packeto Buildpack](https://githu
 
 ## Running Locally
 
-`pipenv run gunicorn --bind=127.0.0.1:8000 app:app`
+`pipenv run gunicorn --bind=127.0.0.1:8001 app:app`
 
 ## Viewing
 
-`curl http://localhost:8000`
+`curl http://localhost:8001`
 
 ## Running on TAP
 
