@@ -14,7 +14,8 @@ messages = [
 
 @app.route("/")
 def hello():
-    return render_template('index.html')
+    client = "VMware"
+    return render_template('index.html', client=client)
 
 @app.route('/messages')
 def get_incomes():
