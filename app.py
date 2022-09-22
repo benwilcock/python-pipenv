@@ -1,5 +1,4 @@
 from flask import Flask, request, render_template, jsonify
-import subprocess
 import gunicorn
 
 app_name = "Python App With Flask, HTML, And REST"
@@ -20,12 +19,6 @@ def hello():
 @app.route('/messages')
 def get_incomes():
     return jsonify(messages)
-
-@app.route('/execute', methods=['POST'])
-def execute():
-    with open('runtime.py', 'w') as f:
-        f.write(request.values.get('code'))
-    return subprocess.check_output(["python", "runtime.py"])
 
 @app.route('/versions')
 def versions():
