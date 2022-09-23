@@ -4,7 +4,7 @@ verify_ssl = true
 
 [packages]
 Flask = "==2.2.2"
-gunicorn = "*"
+gunicorn = "==20.1.0"
 
 [dev-packages]
 tox = "*"
