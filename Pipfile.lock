@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "481677d50a31287d6d33b7410d6d3950762303e6c464580c01b7285c30fb18d3"
+            "sha256": "656a0f7dabb1f5ed20280166c5a907698bb4839e1c7da27736330d5beaeb0af1"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -20,6 +20,12 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==8.1.3"
+        },
+        "ffmpeg": {
+            "hashes": [
+                "sha256:6931692c890ff21d39938433c2189747815dca0c60ddc7f9bb97f199dba0b5b9"
+            ],
+            "version": "==1.4"
         },
         "flask": {
             "hashes": [
