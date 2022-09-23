@@ -43,4 +43,16 @@ def hello():
 
 The homepage will then use the new name of the client in the text at the bottom of the page.
 
+## Vulnerability Scanning
 
+Creating `requirements.txt` file:
+
+```bash
+pipenv lock --requirements > requirements.txt
+```
+
+Running the Grype scanner:
+
+```bash
+grype . # Run from this folder
+```
