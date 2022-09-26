@@ -45,14 +45,26 @@ The homepage will then use the new name of the client in the text at the bottom 
 
 ## Vulnerability Scanning
 
-Creating `requirements.txt` file:
+Adding a known vulnerability:
+
+Open the Pipfile, and under the `[Packages]` section add the line `ffmpeg = "==1.4"`.
+
+```bash
+nano Pipfile
+```
+
+Now recreate the `requirements.txt` file (Grype uses this as a list of dependencies):
 
 ```bash
 pipenv lock --requirements > requirements.txt
 ```
 
-Running the Grype scanner:
+Now run the Grype scanner on the code folder:
 
 ```bash
 grype . # Run from this folder
 ```
+
+Grype should spot the vulnerability and log warnings to the console.
+
+To remove the vulnerability, remove the ffmpeg dependency from the `Pipfile` and recreate the `requirements.txt` again.
