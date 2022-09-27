@@ -4,7 +4,12 @@ A basic sample which began life as part of the [Packeto Buildpack](https://githu
 
 ## Running Locally
 
-`pipenv run gunicorn --bind=127.0.0.1:8001 app:app`
+For a fresh clone, you may have to have Pipenv install the dependencies first. 
+
+```bash
+pipenv install
+pipenv run gunicorn --bind=127.0.0.1:8001 app:app`
+```
 
 ## Viewing
 
