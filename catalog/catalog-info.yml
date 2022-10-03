@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: python-pipenv
+  description: Python Sample App
+  tags:
+    - python
+    - web
+    - tanzu
+  annotations:
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=python-pipenv'
+spec:
+  type: service
+  lifecycle: experimental
+  owner: default-team
