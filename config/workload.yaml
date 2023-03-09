@@ -1,0 +1,24 @@
+---
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  labels:
+    app.kubernetes.io/part-of: python-pipenv
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: web
+  name: python-pipenv-vulnerable
+  namespace: dev
+spec:
+  params:
+  - name: annotations
+    value:
+      autoscaling.knative.dev/minScale: "1"
+  - name: testing_pipeline_matching_labels
+    value:
+      apps.tanzu.vmware.com/language: python
+      apps.tanzu.vmware.com/pipeline: test
+  source:
+    git:
+      ref:
+        branch: vulnerable
+      url: https://github.com/benwilcock/python-pipenv
