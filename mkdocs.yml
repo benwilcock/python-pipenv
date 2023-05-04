@@ -1,0 +1,7 @@
+# This is used to build the TechDocs for this component and is referenced here: https://github.com/benwilcock/backstage-catalogs/blob/main/system-polyglot-demo.yml
+site_name: 'python-pipenv'
+site_description: 'A Python sample built using Flask'
+site_author: user:ben.wilcock
+
+nav:
+  - About: 'index.md'
