@@ -34,7 +34,7 @@ tanzu apps workload create python-pipenv \
 
 ## Customisations
 
-For a simple customisation, in the application code (in the `app.py` `hello()` method) change the name of the `client` variable from "VMware" to someone else and then redeploy/restart.
+For a simple customisation, in the application code (in the `app.py` `hello()` method) change the name of the `client` variable from "VMware" to something else and then redeploy/restart.
 
 ```python
 @app.route("/")
