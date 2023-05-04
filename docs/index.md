@@ -11,7 +11,7 @@ Features at a glance:
 
 Navigating your broswer to **http(s)://&lt;your.hosting.url&gt;:&lt;port&gt;** should show the following screen:
 
-![supply chain diagram](https://github.com/benwilcock/dotnet-aspcore/raw/main/static/tap-into-prod.png "Composable and Modular - TAP Supply Chains")
+![supply chain diagram](https://github.com/benwilcock/python-pipenv/raw/main/static/tap-into-prod.png "Composable and Modular - TAP Supply Chains")
 
 ## Running on the VMware Tanzu Application Platform
 
