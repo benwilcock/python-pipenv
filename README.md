@@ -4,7 +4,7 @@ A basic sample which began life as part of the [Packeto Buildpack](https://githu
 
 ## Running Locally
 
-For a fresh clone, you may have to have Pipenv install the dependencies first. 
+For a fresh clone, you may have to have Pipenv install the dependencies first.
 
 ```bash
 pipenv install
@@ -18,8 +18,31 @@ pipenv run gunicorn --bind=127.0.0.1:8001 app:app`
 ## Running on TAP
 
 ```bash
+# Works with default supply chain
+
 tanzu apps workload create python-pipenv \
-  --git-repo https://github.com/benwilcock/python-pipenv \
+  --git-repo https://github.com/arulvannala/python-pipenv \
+  --git-branch main \
+  --type web \
+  --label app.kubernetes.io/part-of=python-pipenv \
+  --annotation autoscaling.knative.dev/minScale=1 \
+  --tail \
+  --yes
+
+# pushing from local example
+
+tanzu apps workload apply python-pipenv-new --source-image dev.registry.pivotal.io/se-americas-west/py-pipe \
+  --local-path  /Users/avannala/Documents/workspace/tap/apps/python-pipenv  --type web \
+  --label app.kubernetes.io/part-of=python-pipenv \
+  --annotation autoscaling.knative.dev/minScale=1 \
+  --tail \
+  --yes  
+
+
+# Need the additional pipelines with below cmd
+
+tanzu apps workload create python-pipenv \
+  --git-repo https://github.com/arulvannala/python-pipenv \
   --git-branch main \
   --type web \
   --label app.kubernetes.io/part-of=python-pipenv \
