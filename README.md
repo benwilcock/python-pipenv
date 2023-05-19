@@ -28,7 +28,9 @@ tanzu apps workload create python-pipenv \
   --annotation autoscaling.knative.dev/minScale=1 \
   --tail \
   --yes
+```
 
+```bash
 # pushing from local example
 
 tanzu apps workload apply python-pipenv-new --source-image dev.registry.pivotal.io/se-americas-west/py-pipe \
@@ -37,8 +39,8 @@ tanzu apps workload apply python-pipenv-new --source-image dev.registry.pivotal.
   --annotation autoscaling.knative.dev/minScale=1 \
   --tail \
   --yes  
-
-
+```
+```bash
 # Need the additional pipelines with below cmd
 
 tanzu apps workload create python-pipenv \
