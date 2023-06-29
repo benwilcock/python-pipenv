@@ -99,3 +99,5 @@ grype . # Run from this folder
 Grype should spot the vulnerability and log warnings to the console.
 
 To remove the vulnerability, remove the ffmpeg dependency from the `Pipfile` and recreate the `requirements.txt` again.
+
+test
