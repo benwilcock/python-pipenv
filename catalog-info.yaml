@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: python-pipenv
+  annotations:
+    github.com/project-slug: arulvannala/python-pipenv
+spec:
+  type: other
+  lifecycle: unknown
+  owner: default
